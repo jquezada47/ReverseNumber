@@ -1,25 +1,20 @@
 #include <stdio.h>
-#include <stdlib.h>
-
+ 
 int main()
 {
-    int nums, i, j, temp;
-    int arr[25];
-    printf("How many numbers do you want to reverse: ");
-    scanf("%d", &nums);
-    printf("Enter numbers: ");
-    for(i=0;i<nums;i++){
-        scanf("%d", &arr[i]);
-    }
-    for (i=0;i<nums-1;i++){
-        for (j=0;j<nums-1-i;j++){
-            temp=arr[j];
-            arr[j]=arr[j+1];
-            arr[j+1]=temp;
-        }
-    }
-    printf("Reversed: ");
-    for (i=0;i<nums;i++){
-        printf("%d ",arr[i]);
+  int n, reverse = 0;
+ 
+  printf("Enter a number to reverse\n");
+  scanf("%d", &n);
+ 
+  while (n != 0)
+  {
+    reverse = reverse * 10;
+    reverse = reverse + n%10;
+    n = n/10;
   }
+ 
+  printf("Reverse of entered number is = %d\n", reverse);
+ 
+  return 0;
 }
